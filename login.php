@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="estiloScrum.css">
 	<title>Inicia Sesión</title>
-	<script type="text/javascript" src="scripts.js"></script>
+	<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
 
@@ -29,13 +29,17 @@ $stmt->bindValue(':nombre',$nombre);
 $stmt->bindValue(':pass',$pass);
 $stmt->execute();
 $result=$stmt->rowCount();
-if ($result==1) {
-	echo "Hola soy: $nombre";
-}else{
-	addMessageError();
+
+if(isset($_POST['submit'])){
+	if ($result==1) {
+		header("Location: scrummaster.html");
+		
+	}else{
+		echo"No existe";
+	}
 }
 
+
 ?>
-	<div id="divError">Prueba div</div>
 </body>
 </html>

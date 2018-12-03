@@ -1,0 +1,4 @@
+
+function controlarUser(nameUser){
+	
+}

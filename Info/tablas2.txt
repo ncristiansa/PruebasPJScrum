@@ -116,12 +116,15 @@ INSERTS:
 	- Projecto insertado en la DBPrueba.
 
 		INSERT INTO Projects (projectID,nameProject, description, scrumMasterName, productOwnerName, startDate, endDate) VALUES (1,"Projecto1","Ejemplo projecto","juana", "andrea", "3-12-18", "12-12-18");
+		
 	- Sprint insertado en la DBPrueba. 
 
 		INSERT INTO Sprints (sprintID, projectID, hours, startDate, endDate) VALUES (1, 1, 4, "3-12-18", "12-12-18");
+
 	- Homework insertado en la DBPrueba.
 
 		INSERT INTO Homework (homeworkID, projectID, description, sprintID, hours) VALUES (1, 1, "Crear web", 1, 2);
+
 	- Scrum insertado en la DBPrueba.
 
 		INSERT INTO Scrum (scrumID, homeworkID, groupsID, groupName, projectID) VALUES (1, 1, 1, "A", 1);
