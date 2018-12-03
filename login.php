@@ -22,8 +22,8 @@ $pass=$_POST["password"];
 ?>
 <?php 
 
-$log="mysql:host=localhost;dbname=DBProject1";
-$conn = new PDO($log,"Administrador","P@ssw0rd");
+$log="mysql:host=localhost;dbname=DBPrueba";
+$conn = new PDO($log,"prueba","P@ssw0rd");
 $stmt = $conn->prepare("SELECT * FROM Users WHERE nickname=:nombre and passwd=SHA2(:pass,512)");
 $stmt->bindValue(':nombre',$nombre);
 $stmt->bindValue(':pass',$pass);

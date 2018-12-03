@@ -107,3 +107,9 @@ INSERTS:
 		INSERT INTO Users (nickname, username, passwd, type, email) VALUES ("martaz", "marta", SHA2('marta123',512), 3, "martadeveloper@gmail.com" );
 
 	- Grupos insertados en la DBProject1.
+			Grupo: A
+		INSERT INTO Groups (nameGroup, projectID) VALUES ("A", NULL);
+			Grupo: B
+		INSERT INTO Groups (nameGroup, projectID) VALUES ("B", NULL);
+			Grupo: C
+		INSERT INTO Groups (nameGroup, projectID) VALUES ("C", NULL);
