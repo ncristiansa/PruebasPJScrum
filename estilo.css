@@ -1,0 +1,12 @@
+body{
+	margin: 0;
+}
+.nav-user-icon{
+	background-color: black;
+	color: white;
+	padding: 1%;
+	margin: 0px;
+}
+.img-logout{
+	float: right;
+}

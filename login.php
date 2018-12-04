@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+	//Inicio de session para los usuarios que accedan
+	session_start();
+?>
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="estiloScrum.css">
@@ -19,6 +23,11 @@ echo "<h2 class='titulo'>LOGIN</h2>";
 	
 	$nombre=$_POST["nom"];
 	$pass=$_POST["password"];
+?>
+<?php
+	//Variables de session
+	$_SESSION["Name"] = $nombre;
+	$_SESSION["Pass"] = $pass;
 ?>
 <?php 
 
@@ -51,7 +60,7 @@ if(isset($_POST['submit'])){
 		$resultGroupC=$stmtGroupsC->rowCount();
 
 		if($resultGroupA==1){
-			header("Location: scrummaster.html");
+			header("Location: vistainicialP2.php");
 		}elseif ($resultGroupB==1) {
 			header("Location: productowner.html");
 		}elseif ($resultGroupC==1) {
