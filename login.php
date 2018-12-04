@@ -32,44 +32,17 @@ echo "<h2 class='titulo'>LOGIN</h2>";
 <?php 
 
 	$log="mysql:host=localhost;dbname=DBPrueba";
-	$conn = new PDO($log,"root","funky");
+	$conn = new PDO($log,"Administrador","P@ssw0rd");
 	$stmt = $conn->prepare("SELECT * FROM Users WHERE nickname=:nombre and passwd=SHA2(:pass,512)");
 	$stmt->bindValue(':nombre',$nombre);
 	$stmt->bindValue(':pass',$pass);
 	$stmt->execute();
 	$result=$stmt->rowCount();
-
+	print_r($_SESSION["Name"]);
+	print_r($_SESSION["Pass"]);
 if(isset($_POST['submit'])){
-	if ($result==1) {
-		//Grupo A Scrum Master
-		$stmtGroupsA = $conn->prepare("SELECT nameGroup, nickname FROM Users WHERE nickname=:nombre AND nameGroup='A'");
-		$stmtGroupsA->bindValue(':nombre', $nombre);
-		$stmtGroupsA->execute();
-		$resultGroupA=$stmtGroupsA->rowCount();
-		
-		//Grupo B Product Owner
-		$stmtGroupsB = $conn->prepare("SELECT nameGroup, nickname FROM Users WHERE nickname=:nombre AND nameGroup='B'");
-		$stmtGroupsB->bindValue(':nombre', $nombre);
-		$stmtGroupsB->execute();
-		$resultGroupB=$stmtGroupsB->rowCount();
-
-		//Grupo C Developer
-		$stmtGroupsC = $conn->prepare("SELECT nameGroup, nickname FROM Users WHERE nickname=:nombre AND nameGroup='C'");
-		$stmtGroupsC->bindValue(':nombre', $nombre);
-		$stmtGroupsC->execute();
-		$resultGroupC=$stmtGroupsC->rowCount();
-
-		if($resultGroupA==1){
-			header("Location: vistainicialP2.php");
-		}elseif ($resultGroupB==1) {
-			header("Location: productowner.html");
-		}elseif ($resultGroupC==1) {
-			header("Location: developer.html");
-		}
-		
-		
-	}else{
-		echo"No existe";
+	if($result==1){
+		header("Location: vistainicialP2.php");
 	}
 }
 
