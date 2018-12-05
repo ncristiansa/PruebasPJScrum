@@ -38,8 +38,6 @@ echo "<h2 class='titulo'>LOGIN</h2>";
 	$stmt->bindValue(':pass',$pass);
 	$stmt->execute();
 	$result=$stmt->rowCount();
-	print_r($_SESSION["Name"]);
-	print_r($_SESSION["Pass"]);
 if(isset($_POST['submit'])){
 	if($result==1){
 		header("Location: vistainicialP2.php");
