@@ -43,3 +43,6 @@
 
     	A. Disseny i anàlisi de la base de dades(6h)
     	2.Cal una pàgina de login única per tots els usuaris.(1h)
+        3.L'usuari romandrà dins la sessió del seu perfil fins que faci logout.(1h)
+        4.La contrasenya dels usuaris estarà xifrada de forma segura.(1)
+        7.En tot moment i en totes les pàgines (excepte la pàgina de login) a la part superior dreta ha de apareixer l'usuari logat amb el format (usuari: NOM) i una icona per poder fer logout(2h)

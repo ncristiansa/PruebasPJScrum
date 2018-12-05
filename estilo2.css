@@ -78,6 +78,21 @@ nav{
 	height: 4%;
 	
 }
+.div-father {
+	word-wrap: break-word
+}
+.list-projects {
+	padding: 2%;
+	width: 30%;
+	border:solid;
+
+}
+.title-list {
+	font-size: 120%;
+}
+.text-li {
+	font-size:100%;
+}
 /*
 body{
 	margin: 0;

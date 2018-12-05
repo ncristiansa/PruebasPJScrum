@@ -73,15 +73,40 @@
 ?>
 
 <?php
+	/*
+		Hemos creado una función llamada destroySession para que una vez sea llamada destruya la SESSION actual y nos redirija a login.php
+	*/
 	function destroySession(){
 		session_destroy();
 		header("Location: login.php");
 	}
+	/*
+		Esta condición nos permite saber si el usuario ha hecho click en la imagen donde hemos añadido una especie de
+		variable que estará siempre en True, activada para que cuando se haya hecho clic llame a la función destroySession.
+	*/
 	if(isset($_GET['exituser'])){
 		destroySession();
 	}
 ?>
-
+<?php
+	/*
+		Listado de proyectos existentes, links que nos enviará a la pàgina de Administración del projecto.
+	*/
+	$listProjects = ("SELECT nameProject FROM Projects;");
+	$resultList = mysqli_query($connect, $listProjects);
+?>
+<div align="center" class="div-father">
+	<div class="list-projects" align="center">
+			<p class="title-list">Lista de proyectos</p>
+	<ul>
+		<?php
+			while ($QueryList = mysqli_fetch_assoc($resultList)) {
+				echo"<li class='text-li'><a href='#'>".$QueryList["nameProject"]."</li></a>";
+			}
+		?>
+	</ul>
+	</div>
+</div>
 <?php
 	$typeUser = ("SELECT type FROM Users WHERE username='$NameUser';");
 	$resultTypeUser = mysqli_query($connect, $typeUser);
@@ -101,7 +126,3 @@
 
 </body>
 </html>
-
-
-
-
