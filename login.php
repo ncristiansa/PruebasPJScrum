@@ -8,19 +8,24 @@
 	<link rel="stylesheet" type="text/css" href="estiloScrum.css">
 	<title>Inicia Sesión</title>
 	<script type="text/javascript" src="scripts.js"></script>
+	<!-- Materialize -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-<body>
+<body style="padding: 2%;">
 
-<?php 
-echo "<h2 class='titulo'>LOGIN</h2>";
-	echo "<form class='formulario' action='login.php' method='POST' align='center'>";
-		echo "Usuario: <br>";
-			echo "<input type='text' name='nom'><br>";
-		echo "Password: <br>";
-			echo "<input type='password' name='password'><br>";
-		echo "<input type='submit' value='Enviar' name='submit' id='btn'><br>";
-	echo "</form>";
+<?php
+	echo "<div class='Login-Style'>"; 
+	echo "<h2 class='titulo'>Login</h2>";
 	
+	echo "<form class='formulario' action='login.php' method='POST' align='center'>";
+		echo"<label>Usuario: </label>";
+			echo "<input type='text' name='nom'><br>";
+		echo "<label>Contraseña: </label>";
+			echo "<input type='password' name='password'><br>";
+		echo "<input type='submit' value='Enviar' name='submit' id='btn' class='waves-effect waves-light btn-small'><br>";
+	echo "</form>";
+	echo "</div>";
 	$nombre=$_POST["nom"];
 	$pass=$_POST["password"];
 ?>
@@ -43,11 +48,6 @@ echo "<h2 class='titulo'>LOGIN</h2>";
 	$queryPass->bindValue(':pass', $pass);
 	$queryPass->execute();
 	$resultPass=$queryPass->rowCount();
-	//$stmt = $conn->prepare("SELECT * FROM Users WHERE nickname=:nombre and passwd=SHA2(:pass,512)");
-	//$stmt->bindValue(':nombre',$nombre);
-	//$stmt->bindValue(':pass',$pass);
-	//$stmt->execute();
-	//$result=$stmt->rowCount();
 
 	/*
 		Esta condición nos permite controlar si el usuario ha hecho click en el botón "Enviar".

@@ -1,15 +1,15 @@
 body{
 	margin:0;
 	padding: 0;
+  background-color: #dce7ef  ;
 }
 .titulo{
-	margin-left: 45%;
-	margin-top: 3%;
+	margin: 0 auto;
+  width: 40%;
 }
 
-.formulario{
-	margin: 0 auto;
-  width: 15%;
+.formulario{	
+  width: 100%;
 }
 
 .ptitulos{
@@ -21,9 +21,8 @@ body{
 */
 #MessageError {
   margin: 0 auto; 
-  width: 18%;
+  width: 50%;
   border-radius: 3px;
-  border-style: dashed;
   border-color: #ee1c19;
   word-break: break-all;
   word-wrap: break-word;
@@ -39,34 +38,23 @@ body{
   float:right;
   animation: blinkIcon 0.5s;
   animation-iteration-count: infinite;
+  padding:5px;
+  margin: 5px;
+}
+.Login-Style {
+  margin:0 auto;
+  padding:10%;
+  width: 40%;
+  background-color: white; 
+  box-shadow: 4px 4px 4px 4px #888888;
 }
 
-/*Mensaje de error
-#error {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  text-align: center;
-  background-color: black;
-  animation: blinkerMargin 0.3s linear infinite;
-}
-#textError{
-  background-color: white;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 0.2%;
-  width: 97.5%;
-  height: 98%;
-
-}
-*/
 #imageAlert{
   height: 25px;
   width: auto;
   animation: blinkIcon 1s;
   animation-iteration-count: infinite;
+
 }
 @keyframes blinkIcon {
     0% {
@@ -83,10 +71,6 @@ body{
   50% {
     background-color: red;
   }
-
-
-
-
 table{
 	border: 1px solid black;
 	width: 100%;
