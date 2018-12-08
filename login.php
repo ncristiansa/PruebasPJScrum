@@ -13,7 +13,7 @@
 
 <?php 
 echo "<h2 class='titulo'>LOGIN</h2>";
-	echo "<form class='formulario' action='login.php' method='POST' >";
+	echo "<form class='formulario' action='login.php' method='POST' align='center'>";
 		echo "Usuario: <br>";
 			echo "<input type='text' name='nom'><br>";
 		echo "Password: <br>";
@@ -55,19 +55,15 @@ echo "<h2 class='titulo'>LOGIN</h2>";
 	if(isset($_POST['submit'])){
 		/*
 			Comprobamos si la consulta del nombre ha devuelto una fila, si se cumple...
-		*/
-		if($resultUser==1){
-			echo "nombre usuario bien";
-		}else{
-			echo '<script type="text/javascript">addMessageError("Usuario inválido.");</script>';
-		}
-		/*
 			Comprobamos si la consulta del password ha devuelto una fila, si se cumple
 		*/
-		if($resultPass==1){
-			echo "contraseña usuario bien";
-		}else{
-			'<script type="text/javascript">addMessageError("Contraseña inválido.");</script>';
+
+		if ($resultUser==0 && $resultPass==0) {
+			echo '<script type="text/javascript">addMessageError("Usuario y contraseña incorrecta.", true);</script>';
+		}elseif ($resultUser==0) {
+			echo '<script type="text/javascript">addMessageError("Usuario incorrecto.", true);</script>';
+		}elseif ($resultPass==0) {
+			echo '<script type="text/javascript">addMessageError("Contraseña incorrecta.", true);</script>';
 		}
 		/*
 			Si ambas condiciones se cumplen nos enviará a la web

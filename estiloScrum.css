@@ -8,13 +8,40 @@ body{
 }
 
 .formulario{
-	margin-left: 40%;
+	margin: 0 auto;
+  width: 15%;
 }
 
 .ptitulos{
 	margin-left: 7%;
 }
-/*Mensaje de error*/
+
+/*
+  Mis pruebas css mensaje Error
+*/
+#MessageError {
+  margin: 0 auto; 
+  width: 18%;
+  border-radius: 3px;
+  border-style: dashed;
+  border-color: #ee1c19;
+  word-break: break-all;
+  word-wrap: break-word;
+  animation: blinkerMargin 1s linear infinite;
+}
+#pError {
+  color: red;
+  background-color: white;
+  padding: 5px;
+  margin: 5px;
+}
+#imgError {
+  float:right;
+  animation: blinkIcon 0.5s;
+  animation-iteration-count: infinite;
+}
+
+/*Mensaje de error
 #error {
   position: fixed;
   bottom: 0;
@@ -34,6 +61,7 @@ body{
   height: 98%;
 
 }
+*/
 #imageAlert{
   height: 25px;
   width: auto;
@@ -120,3 +148,4 @@ nav{
 	height: 4%;
 	
 }
+
