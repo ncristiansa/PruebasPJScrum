@@ -1,21 +1,25 @@
 body{
-	margin:0;
-	padding: 0;
+  margin:0;
+  padding: 0;
   background-color: #dce7ef  ;
 }
 .titulo{
-	margin: 0 auto;
+  margin: 0 auto;
   width: 40%;
 }
 
-.formulario{	
+.formulario{  
   width: 100%;
 }
 
 .ptitulos{
-	margin-left: 7%;
+  margin-left: 7%;
 }
+table{
+  border: 1px solid black;
+  width: 100%;
 
+}
 /*
   Mis pruebas css mensaje Error
 */
@@ -81,43 +85,39 @@ body{
   50% {
     background-color: red;
   }
+}
 table{
-	border: 1px solid black;
-	width: 100%;
+  border: 1px solid black;
+  width: 100%;
 
 }
 .divtabla{
-	margin-left: 35%;
-	width: 30%;
-	margin-top: 5%;
+  margin-left: 35%;
+  width: 30%;
+  margin-top: 5%;
 }
 .ptituloproyectos{
-	text-align: center;
+  text-align: center;
 }
 
 .imglogout{
-	width: 4%;
-	height: 4%;
-	padding: 0%;
+  width: 4%;
+  height: 4%;
+  padding: 0%;
 }
 .liimglogout{
-	margin-left: 85%;
-	display: inline;
+  margin-left: 85%;
+  display: inline;
 }
 .lihorizontal{
-	display: inline;
-	color:   #605f60;
+  display: inline;
+  color:   #605f60;
 
 }
 nav{
-	background-color: black;
-	margin-top:-1%;
-
-
-
+  background-color: black;
+  margin-top:-1%;
 }
-
-
 .imgusuario:hover
 {
   
@@ -138,8 +138,22 @@ nav{
   
 }
 .imgusuario{
-	width: 4%;
-	height: 4%;
-	
+  width: 4%;
+  height: 4%;
+  
 }
+.div-father {
+  word-wrap: break-word
+}
+.list-projects {
+  padding: 2%;
+  width: 30%;
+  border:solid;
 
+}
+.title-list {
+  font-size: 120%;
+}
+.text-li {
+  font-size:100%;
+}

@@ -38,4 +38,11 @@ function addMessageError(errorText, status){
 	}
 	
 }
- 
+
+function assignedProjects(){
+
+	var container = document.createElement("div");
+	container.setAttribute("id", "box-developer");
+	container.setAttribute();
+
+}

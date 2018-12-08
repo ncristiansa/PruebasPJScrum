@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="estilo2.css">
-	<title>Prueba 2</title>
+	<link rel="stylesheet" type="text/css" href="estiloScrum.css">
+	<title>Panel de Control</title>
 	<meta charset="utf-8">
 </head>
 <body>
@@ -117,10 +117,10 @@
 		print_r("Empieza el programa llamando a X funciones del type 1");
 	}
 	elseif ($userType==2) {
-		print_r("Type 2");
+		print_r("Type 2 Product Owner");
 	}
 	elseif ($userType==3) {
-		print_r("Type 3");
+		print_r("Type Developer");
 	}
 ?>
 
