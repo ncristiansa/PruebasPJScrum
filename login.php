@@ -15,13 +15,13 @@
 <body style="padding: 2%;">
 
 <?php
-	echo "<div class='Login-Style'>"; 
-	echo "<h2 class='titulo'>Login</h2>";
-	
+	echo "<div class='Login-Style'>";
+	echo "<h2>Gestor de projectes SCRUM<h2>"; 
+	echo "<h2 class='h2-Style'>Login</h2>";
 	echo "<form class='formulario' action='login.php' method='POST' align='center'>";
-		echo"<label>Usuario: </label>";
+		echo"<label class='Label-Style'>Usuario: </label>";
 			echo "<input type='text' name='nom'><br>";
-		echo "<label>Contraseña: </label>";
+		echo "<label class='Label-Style'>Contraseña: </label>";
 			echo "<input type='password' name='password'><br>";
 		echo "<input type='submit' value='Enviar' name='submit' id='btn' class='waves-effect waves-light btn-small'><br>";
 	echo "</form>";
@@ -53,17 +53,21 @@
 		Esta condición nos permite controlar si el usuario ha hecho click en el botón "Enviar".
 	*/
 	if(isset($_POST['submit'])){
-		/*
-			Comprobamos si la consulta del nombre ha devuelto una fila, si se cumple...
-			Comprobamos si la consulta del password ha devuelto una fila, si se cumple
-		*/
 
-		if ($resultUser==0 && $resultPass==0) {
+		if(empty($nombre) && empty($pass)){
+			echo '<script type="text/javascript">addMessageError("Introduzca un nombre usuario y una contraseña.", true);</script>';
+		}elseif (empty($nombre)) {
+			echo '<script type="text/javascript">addMessageError("Introduzca un nombre de usuario.", true);</script>';
+		}elseif (empty($pass)) {
+			echo '<script type="text/javascript">addMessageError("Introduzca una contraseña.", true);</script>';
+		}else{
+			if ($resultUser==0 && $resultPass==0) {
 			echo '<script type="text/javascript">addMessageError("Usuario y contraseña incorrecta.", true);</script>';
-		}elseif ($resultUser==0) {
+			}elseif ($resultUser==0) {
 			echo '<script type="text/javascript">addMessageError("Usuario incorrecto.", true);</script>';
-		}elseif ($resultPass==0) {
+			}elseif ($resultPass==0) {
 			echo '<script type="text/javascript">addMessageError("Contraseña incorrecta.", true);</script>';
+			}
 		}
 		/*
 			Si ambas condiciones se cumplen nos enviará a la web
