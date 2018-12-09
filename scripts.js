@@ -43,6 +43,7 @@ function assignedProjects(){
 
 	var container = document.createElement("div");
 	container.setAttribute("id", "box-developer");
-	container.setAttribute();
+	container.setAttribute("align", "left");
+	
 
 }
