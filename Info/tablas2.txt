@@ -64,16 +64,13 @@ Tabla Users:
 
 mysql> CREATE TABLE Users (userID INT(2) AUTO_INCREMENT, nickname VARCHAR(50), username VARCHAR(50), type INT(2), email VARCHAR(50), PRIMARY KEY (userID)); 
 
-
-Tabla Projects:
-
-CREATE TABLE Projects (projectID INT(2), nameProject VARCHAR(50), description VARCHAR(50), scrumMasterName VARCHAR(50), productOwnerName VARCHAR(50), startDate VARCHAR(30), endDate VARCHAR(30), PRIMARY KEY (projectID));
-
 Tabla Groups:
 
 mysql> CREATE TABLE Groups ( groupID INT(2) AUTO_INCREMENT, nameGroup VARCHAR(50), userID INT(2), PRIMARY KEY (groupID), CONSTRAINT fk_userID FOREIGN KEY (userID) REFERENCES Users(userID));
 
+Tabla Projects:
 
+CREATE TABLE Projects (projectID INT(2), nameProject VARCHAR(50), description VARCHAR(50), scrumMasterName VARCHAR(50), productOwnerName VARCHAR(50), startDate VARCHAR(30), endDate VARCHAR(30), PRIMARY KEY (projectID));
 
 
 Tabla Sprints:
@@ -100,11 +97,11 @@ FLUSH PRIVILEGES;
 INSERTS:
 	- Usuarios insertados en la DBProject1.
 	User ScrumMaster:
-		INSERT INTO Users (nickname, username, passwd, type, nameGroup, email) VALUES ("juanam", "juana", SHA2('juana123',512), 1,"A", "juanascrummaster@gmail.com" );
+		INSERT INTO Users (nickname, username, passwd, type, email) VALUES ("juanam", "Juana", SHA2('juana123',512), 1,"juanascrummaster@gmail.com" );
 	User Product Owner:
-		INSERT INTO Users (nickname, username, passwd, type, nameGroup, email) VALUES ("andreat", "andrea", SHA2('andrea123',512), 2, "B" "andreatproduct@gmail.com" );
+		INSERT INTO Users (nickname, username, passwd, type, email) VALUES ("andreat", "Andrea", SHA2('andrea123',512), 2, "andreatproduct@gmail.com");
 	User Developer:
-		mysql> INSERT INTO Users (nickname, username, passwd, type, nameGroup, email) VALUES ("martaz", "Marta", SHA2('marta123',512), 3, "C", "marta@gmail.com");
+		mysql> INSERT INTO Users (nickname, username, passwd, type, email) VALUES ("martaz", "Marta", SHA2('marta123',512), 3, "martadeveloper@gmail.com");
 
 
 	- Grupos insertados en la DBProject1.
