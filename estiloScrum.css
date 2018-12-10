@@ -2,6 +2,7 @@ body{
   margin:0;
   padding: 0;
   background-color: #dce7ef  ;
+  font-family: Arial;
 }
 .titulo{
   margin: 0 auto;
@@ -143,18 +144,20 @@ nav{
   height: 4%;
   
 }
-.div-father {
-  word-wrap: break-word
-}
-.list-projects {
-  padding: 2%;
-  width: 30%;
-  border:solid;
 
-}
 .title-list {
   font-size: 120%;
 }
 .text-li {
   font-size:100%;
+}
+.Table-List {
+  margin: 0 auto;
+  word-wrap: break-word;
+  width: 40%;
+  background-color: white;
+  border-collapse: collapse;
+}
+a:link {
+  text-decoration: none;
 }

@@ -5,6 +5,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="estiloScrum.css">
+
 	<title>Panel de Control</title>
 	<meta charset="utf-8">
 </head>
@@ -97,18 +98,22 @@
 	$listProjects = ("SELECT nameProject FROM Projects;");
 	$resultList = mysqli_query($connect, $listProjects);
 ?>
-<div align="center" class="div-father">
-	<div class="list-projects" align="center">
-			<p class="title-list">Lista de proyectos</p>
-	<ul>
-		<?php
+	<?php
+		echo "<table border='2' rules='rows' class='Table-List'>";
+			echo "<tr>";
+				echo "<td colspan='4' align='right'><b>Proyecto</b></td>";
+			echo "</tr>";
+			echo "<tr>";
+				echo "<td colspan='4' align='center' bgcolor=' #1579c8
+'>Lista de proyectos</td>";
+			echo "</tr>";
 			while ($QueryList = mysqli_fetch_assoc($resultList)) {
-				echo"<li class='text-li'><a href='#'>".$QueryList["nameProject"]."</li></a>";
+				echo "\t<tr>\n";
+					echo "\t\t<td align='center' colspan='4'><a href='#' target='_blank'>".$QueryList["nameProject"]."</a></td>\n";
+				echo "\t</tr>\n";
 			}
-		?>
-	</ul>
-	</div>
-</div>
+		echo "</table>";
+	?>
 <?php
 	$typeUser = ("SELECT type FROM Users WHERE username='$NameUser';");
 	$resultTypeUser = mysqli_query($connect, $typeUser);
