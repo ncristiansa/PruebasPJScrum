@@ -62,9 +62,7 @@ CREACIÓN DE TABLAS:
 
 Tabla Users:
 
-CREATE TABLE Users (userID INT(2) AUTO_INCREMENT, nickname VARCHAR(50), username VARCHAR(50), passwd VARCHAR(512), type INT(2), nameGroup VARCHAR(50), email VARCHAR(50), PRIMARY KEY (userID));
-
-mysql> INSERT INTO Users VALUES ("juanam", "juana", SHA2('juana123', 512),  );
+mysql> CREATE TABLE Users (userID INT(2) AUTO_INCREMENT, nickname VARCHAR(50), username VARCHAR(50), type INT(2), email VARCHAR(50), PRIMARY KEY (userID)); 
 
 
 Tabla Projects:
@@ -73,7 +71,9 @@ CREATE TABLE Projects (projectID INT(2), nameProject VARCHAR(50), description VA
 
 Tabla Groups:
 
-CREATE TABLE Groups (groupsID INT(2) AUTO_INCREMENT, nameGroup VARCHAR(2), projectID INT(2), PRIMARY KEY (groupsID), FOREIGN KEY (projectID) REFERENCES Projects (projectID));
+mysql> CREATE TABLE Groups ( groupID INT(2) AUTO_INCREMENT, nameGroup VARCHAR(50), userID INT(2), PRIMARY KEY (groupID), CONSTRAINT fk_userID FOREIGN KEY (userID) REFERENCES Users(userID));
+
+
 
 
 Tabla Sprints:
@@ -100,19 +100,20 @@ FLUSH PRIVILEGES;
 INSERTS:
 	- Usuarios insertados en la DBProject1.
 	User ScrumMaster:
-		INSERT INTO Users (nickname, username, passwd, type, email) VALUES ("juanam", "juana", SHA2('juana123',512), 1, "juanascrummaster@gmail.com" );
+		INSERT INTO Users (nickname, username, passwd, type, nameGroup, email) VALUES ("juanam", "juana", SHA2('juana123',512), 1,"A", "juanascrummaster@gmail.com" );
 	User Product Owner:
-		INSERT INTO Users (nickname, username, passwd, type, email) VALUES ("andreat", "andrea", SHA2('andrea123',512), 2, "andreatproduct@gmail.com" );
+		INSERT INTO Users (nickname, username, passwd, type, nameGroup, email) VALUES ("andreat", "andrea", SHA2('andrea123',512), 2, "B" "andreatproduct@gmail.com" );
 	User Developer:
-		INSERT INTO Users (nickname, username, passwd, type, email) VALUES ("martaz", "marta", SHA2('marta123',512), 3, "martadeveloper@gmail.com" );
+		mysql> INSERT INTO Users (nickname, username, passwd, type, nameGroup, email) VALUES ("martaz", "Marta", SHA2('marta123',512), 3, "C", "marta@gmail.com");
+
 
 	- Grupos insertados en la DBProject1.
 			Grupo: A
-		INSERT INTO Groups (nameGroup, projectID) VALUES ("A", NULL);
+				INSERT INTO Groups (nameGroup, userID) VALUES ("A", 1);;
 			Grupo: B
-		INSERT INTO Groups (nameGroup, projectID) VALUES ("B", NULL);
+				INSERT INTO Groups (nameGroup, userID) VALUES ("B", 2);
 			Grupo: C
-		INSERT INTO Groups (nameGroup, projectID) VALUES ("C", NULL);
+				INSERT INTO Groups (nameGroup, userID) VALUES ("C", 3);
 	- Projecto insertado en la DBPrueba.
 
 		INSERT INTO Projects (projectID,nameProject, description, scrumMasterName, productOwnerName, startDate, endDate) VALUES (1,"Projecto1","Ejemplo projecto","juana", "andrea", "3-12-18", "12-12-18");
